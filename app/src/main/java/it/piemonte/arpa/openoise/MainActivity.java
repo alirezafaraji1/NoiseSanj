@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout LayoutLevel1;
     private LinearLayout LayoutLog;
     private LinearLayout LayoutPlot;
-    private LinearLayout LayoutLevelNoPlot;
+    private LinearLayout LayoutLevelNoPlot;   //rtgrtyrytrwhthsy
 
 
     private TextView LAeqTimeDisplayLabel;

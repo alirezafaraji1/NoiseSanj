@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">OpeNoise</string>
+
+    <!-- MAIN ACTIVITY STRINGS -->
+    <string name="LayoutSimpleLine1">SOUND LEVEL</string>
+    <string name="LayoutSimpleLine2">Refresh:</string>
+    <string name="LayoutSimpleLevel">0.0</string>
+
+    <string name="StartingTimeRunning"></string>
+    <string name="DurationTimeRunning"></string>
+    <string name="ButtonRunning">RESET</string>
+
+    <string name="LMax_label">LAMax</string>
+    <string name="LAeqTimeDisplay_label">LAeq</string>
+    <string name="LAeqTimeDisplay_label_simple">Sound level</string>
+    <string name="LeqTimeDisplay_label">Leq</string>
+    <string name="time_display_label_simple">Refresh:</string>
+    <string name="interface_label">Stai visualizzando l\'interfaccia semplice, puoi passare a quella Avanzata nelle impostazioni</string>
+    <string name="LMin_label">LAMin</string>
+    <string name="LMax">0</string>
+    <string name="LAeqTimeDisplay">0</string>
+    <string name="LMin">0</string>
+    <string name="LAeqRunning_label">LAeq(t)</string>
+    <string name="LAeqRunning"></string>
+
+    <string name="level">0</string>
+    <string name="level_label"></string>
+    <string name="level_label_dBA">dB(A)</string>
+
+    <string name="ButtonLogTextStart">SAVE</string>
+    <string name="ButtonLogTextStop">STOP</string>
+
+    <string name="StartingTimeLog"></string>
+    <string name="DurationTimeLog"></string>
+    <string name="StartingTimeLogText">You are not saving data</string>
+    <string name="DurationTimeLogText">You\'ll save data every:</string>
+    <string name="SavingText">You\'re saving data</string>
+
+    <string name="plot_label_SLMHistory">Storia temporale livello Live</string>
+    <string name="plot_label_SLM">Livelli a barra</string>
+    <string name="plot_label_ThirdOctave">Terzi di Ottava</string>
+    <string name="plot_label_FFT">FFT</string>
+
+    <string name="Days">days</string>
+    <string name="Start">Start: </string>
+    <string name="Duration">Duration (t): </string>
+    <string name="DurationLogFile">Duration:</string>
+
+    <!-- ACTION BAR STRINGS -->
+    <string name="action_log_files">Saved data</string>
+    <string name="action_exit">Exit</string>
+
+    <!-- LOG FILES LIST ACTIVITY STRINGS -->
+    <string name="title_activity_log_files_list">Files list</string>
+    <!-- DIALOG FILES LIST -->
+    <string name="dialog_files_list_open_file">Open with OpeNoise</string>
+    <string name="dialog_files_list_open_with">Open with another app</string>
+    <string name="dialog_files_list_share_file">Share</string>
+    <string name="dialog_files_list_delete_file">Delete</string>
+    <string name="cancel">CANCEL</string>
+    <string name="choose_open">Choose an application to open the file</string>
+    <string name="choose_share">Choose an application to send the file</string>
+    <!-- DIALOG FILE DELETE -->
+    <string name="dialog_file_delete">Are you sure you want to delete the file:</string>
+
+    <!-- LOG FILES READ ACTIVITY STRINGS -->
+    <string name="title_activity_log_files_read">File reading</string>
+    <string name="ButtonLogFileTop">Top</string>
+    <string name="ButtonLogFileBottom">Bottom</string>
+    <string name="ButtonLogFileLeft">Left</string>
+    <string name="ButtonLogFileRight">Right</string>
+
+
+    <string name="SetTheGain">Set the Gain</string>
+    <string name="SetTheGainText">Gain setting is necessary to use this app correctly. To set the Gain you have to check measured data with the actual value.\nBe careful that Gain setting is lost after each update (and reset to 0 dB).
+ </string>
+
+
+
+
+
+</resources>
+

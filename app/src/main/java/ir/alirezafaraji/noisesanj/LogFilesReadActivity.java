@@ -84,7 +84,7 @@ public class LogFilesReadActivity extends AppCompatActivity {
         //Set the text
         logFileName.setText("File:  " + logFileNameGet.toString());
 
-        path = Environment.getExternalStorageDirectory() + File.separator + "openoise";
+        path = Environment.getExternalStorageDirectory() + File.separator + "noisesanj";
         File file = new File(path,logFileNameGet);
         Log.d("nostro log linee", logFileNameGet);
 

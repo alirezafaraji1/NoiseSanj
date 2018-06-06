@@ -1020,8 +1020,8 @@ public class MainActivity extends AppCompatActivity {
     private void startRecordingLogFile() {
         // start the recording log file
         DateFormat df = new SimpleDateFormat("yyyy.MM.dd-HH.mm.ss");
-        String filename = String.format("%s.OpeNoise.txt", df.format(new Date()));
-        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "openoise");
+        String filename = String.format("%s.NoiseSanj.txt", df.format(new Date()));
+        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "noisesanj");
 
         if (!path.exists()) {
             Log.d("mio", "il path non esiste. Creato? : " + path.mkdirs());
@@ -1222,8 +1222,8 @@ public class MainActivity extends AppCompatActivity {
     private void startRecordingLogParametersFile() {
         // start the recording log file
         DateFormat df = new SimpleDateFormat("yyyy.MM.dd-HH.mm.ss");
-        String filename = String.format("%s.OpeNoiseParameters.txt", df.format(new Date()));
-        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "openoise");
+        String filename = String.format("%s.NoiseSanjParameters.txt", df.format(new Date()));
+        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "noisesanj");
 
         if (!path.exists()) {
             Log.d("mio", "il path non esiste. Creato? : " + path.mkdirs());

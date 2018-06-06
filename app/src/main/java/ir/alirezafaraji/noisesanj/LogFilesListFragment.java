@@ -89,7 +89,7 @@ public class LogFilesListFragment extends ListFragment implements OnItemClickLis
             public void onClick(View v) {
 
                 String filename = (String) getListAdapter().getItem(position);
-                path = Environment.getExternalStorageDirectory() + File.separator + "openoise";
+                path = Environment.getExternalStorageDirectory() + File.separator + "noisesanj";
                 File file = new File(path,filename);
 
                 String title = getResources().getString(R.string.choose_open);
@@ -108,7 +108,7 @@ public class LogFilesListFragment extends ListFragment implements OnItemClickLis
             public void onClick(View v) {
 
                 String filename = (String) getListAdapter().getItem(position);
-                path = Environment.getExternalStorageDirectory() + File.separator + "openoise";
+                path = Environment.getExternalStorageDirectory() + File.separator + "noisesanj";
                 File file = new File(path,filename);
 
                 String title = getResources().getString(R.string.choose_share);
@@ -142,7 +142,7 @@ public class LogFilesListFragment extends ListFragment implements OnItemClickLis
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();
-                                path = Environment.getExternalStorageDirectory() + File.separator + "openoise";
+                                path = Environment.getExternalStorageDirectory() + File.separator + "noisesanj";
                                 File file = new File(path,filename);
                                 file.delete();
                                 refresh();
@@ -169,7 +169,7 @@ public class LogFilesListFragment extends ListFragment implements OnItemClickLis
     }
 
     private void refresh(){
-        path = Environment.getExternalStorageDirectory() + File.separator + "openoise";
+        path = Environment.getExternalStorageDirectory() + File.separator + "noisesanj";
 
         // Read all files sorted into the values-array
         List values = new ArrayList();

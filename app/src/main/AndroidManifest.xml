@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="it.piemonte.arpa.openoise">
+    package="ir.alirezafaraji.noisesanj">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +14,7 @@
         android:label="Sound Meter"
         android:theme="@style/AppThemeLight">
         <activity
-            android:name="it.piemonte.arpa.openoise.MainActivity"
+            android:name="ir.alirezafaraji.noisesanj.MainActivity"
             android:configChanges="orientation"
             android:label="Sound Meter">
             <intent-filter>
@@ -22,20 +25,20 @@
         </activity>
 
         <activity
-            android:name="it.piemonte.arpa.openoise.LogFilesListActivity"
+            android:name="ir.alirezafaraji.noisesanj.LogFilesListActivity"
             android:label="@string/title_activity_log_files_list"
-            android:parentActivityName="it.piemonte.arpa.openoise.MainActivity">
+            android:parentActivityName="ir.alirezafaraji.noisesanj.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.piemonte.arpa.openoise.MainActivity" />
+                android:value="ir.alirezafaraji.noisesanj.MainActivity" />
         </activity>
         <activity
-            android:name="it.piemonte.arpa.openoise.LogFilesReadActivity"
+            android:name="ir.alirezafaraji.noisesanj.LogFilesReadActivity"
             android:label="@string/title_activity_log_files_read"
-            android:parentActivityName="it.piemonte.arpa.openoise.LogFilesListActivity">
+            android:parentActivityName="ir.alirezafaraji.noisesanj.LogFilesListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.piemonte.arpa.openoise.LogFilesListActivity" />
+                android:value="ir.alirezafaraji.noisesanj.LogFilesListActivity" />
         </activity>
 
 

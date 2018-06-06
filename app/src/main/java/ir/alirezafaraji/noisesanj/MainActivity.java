@@ -1,17 +1,15 @@
-package it.piemonte.arpa.openoise;
+package ir.alirezafaraji.noisesanj;
 
-import android.app.AlertDialog;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.media.AudioFormat;
@@ -22,8 +20,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -58,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView LevelNoPlotLabel;
     private TextView LAeqRunning;
     private TextView TimeDisplayLabel;
-    private TextView startingTimeRunning;
-    private TextView durationTimeRunning;
     private Button buttonRunning;
     private Button buttonLog;
     private TextView startingTimeLog;
@@ -89,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
     private FileOutputStream fosC;
 
     private AudioRecord recorder;
+
+    private TextView LocLong;
+    private Button LocReq;
+    private TextView locLat;
+    private LocationManager locationManager;
+    private LocationListener locationListener;
+
+
 //    // verifica gain
 //    private AutomaticGainControl AGC;
 //    private boolean  agcEnable0,agcEnable1,agcEnable2,agcEnable3,agcEnable4,agcEnable5,agcEnable6;
@@ -211,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         LayoutAdvance = (LinearLayout) findViewById(R.id.LayoutAdvance);
         LayoutLAeqTimeDisplay = (LinearLayout) findViewById(R.id.LayoutLAeqTimeDisplay);
-        LayoutLMin = (LinearLayout) findViewById(R.id.LayoutLMin);
+        //       LayoutLMin = (LinearLayout) findViewById(R.id.LayoutLMin);
         LayoutLAeqRunning = (LinearLayout) findViewById(R.id.LayoutLAeqRunning);
         LayoutLog = (LinearLayout) findViewById(R.id.LayoutLog);
         LayoutPlot = (LinearLayout) findViewById(R.id.LayoutPlot);
@@ -226,8 +228,6 @@ public class MainActivity extends AppCompatActivity {
         LevelNoPlot = (TextView) findViewById(R.id.LevelNoPlot);
         LevelNoPlotLabel = (TextView) findViewById(R.id.LevelNoPlotLabel);
         LAeqRunning = (TextView) findViewById(R.id.LAeqRunning);
-        startingTimeRunning = (TextView) findViewById(R.id.StartingTimeRunning);
-        durationTimeRunning = (TextView) findViewById(R.id.DurationTimeRunning);
         TimeDisplayLabel = (TextView) findViewById(R.id.time_display_label);
         buttonRunning = (Button) findViewById(R.id.ButtonRunning);
         buttonLog = (Button) findViewById(R.id.ButtonLog);
@@ -236,6 +236,38 @@ public class MainActivity extends AppCompatActivity {
         plotLabel = (TextView) findViewById(R.id.plot_label);
 
 
+        LocReq = (Button) findViewById(R.id.LocReq);
+        locLat = (TextView) findViewById(R.id.ShowLocLat);
+        LocLong = (TextView) findViewById(R.id.ShowLocLong);
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+//                locLat.append("\n" + location.getLatitude() + " " + location.getLongitude() );
+                locLat.setText("lat:    " + location.getLatitude());
+                LocLong.setText("long:  " + location.getLongitude());
+            }
+
+            @Override
+            public void onStatusChanged(String s, int i, Bundle bundle) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String s) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String s) {
+                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(intent);
+            }
+        };
+        configureButton();
+
+
+        locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
 
 
         buttonRunning.setOnClickListener(new View.OnClickListener() {
@@ -277,9 +309,6 @@ public class MainActivity extends AppCompatActivity {
 //                    dbHistorySonogram[i][j] = 0f;
 //                }
 
-                DateFormat df = new SimpleDateFormat("EEE yyyy/MM/dd HH:mm:ss");
-                startingTimeRunning.setText(start + " " + String.format(df.format(new Date())));
-                durationTimeRunning.setText(duration + " 0 " + days + " 00:00:00");
             }
         });
 
@@ -346,6 +375,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    private void configureButton() {
+        LocReq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
+
+            }
+
+        });
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -735,7 +777,6 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 LMax.setText(dBformat(dbFftAGlobalMax));
                                 LAeqRunning.setText(dBformat(dbFftAGlobalRunning));
-                                durationTimeRunning.setText(duration + " " + String.format("%d " + days + " %02d:%02d:%02d", TimeRunning / (3600 * 24), (TimeRunning % (3600 * 24) / 3600), (TimeRunning % 3600) / 60, (TimeRunning % 60)));
                                 LMin.setText(dBformat(dbFftAGlobalMin));
                                 if (levelToShow == "dbFftAGlobalMin") {
                                     level.setText(dBformat(dbFftAGlobalMin));
@@ -1082,10 +1123,6 @@ public class MainActivity extends AppCompatActivity {
         duration = getApplicationContext().getResources().getString(R.string.Duration);
         durationLogFile = getApplicationContext().getResources().getString(R.string.DurationLogFile);
 
-        DateFormat df = new SimpleDateFormat("EEE yyyy/MM/dd HH:mm:ss");
-        startingTimeRunning.setText(start + " " + String.format(df.format(new Date())));
-        durationTimeRunning.setText(duration + " 0 " + days + " 00:00:00");
-
         startingTimeLogText = getApplicationContext().getResources().getString(R.string.StartingTimeLogText);
         durationTimeLogText = getApplicationContext().getResources().getString(R.string.DurationTimeLogText);
 
@@ -1101,8 +1138,8 @@ public class MainActivity extends AppCompatActivity {
 
         level.setText("      ");
 
-            LayoutAdvance.setVisibility(View.VISIBLE);
-            LayoutLog.setVisibility(View.VISIBLE);
+        LayoutAdvance.setVisibility(View.VISIBLE);
+        LayoutLog.setVisibility(View.VISIBLE);
 
         String TimeDisplayText = "";
         if (timeDisplay == 0.5) {
@@ -1113,7 +1150,7 @@ public class MainActivity extends AppCompatActivity {
             TimeDisplayText = "2 s";
         }
 
-       // String LayoutSimpleLine2text = getResources().getString(R.string.LayoutSimpleLine2) + " " + TimeDisplayText;
+        // String LayoutSimpleLine2text = getResources().getString(R.string.LayoutSimpleLine2) + " " + TimeDisplayText;
 
         TimeDisplayLabel.setText("(" + TimeDisplayText + ")");
         LAeqTimeDisplayLabel.setText(LAeqTimeDisplayText + TimeDisplayLabel.getText());

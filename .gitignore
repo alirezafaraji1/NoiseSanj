@@ -6,3 +6,5 @@
 /build
 /captures
 gradle.properties
+
+\.idea/

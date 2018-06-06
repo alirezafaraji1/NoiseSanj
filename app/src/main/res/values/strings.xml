@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OpeNoise</string>
+    <string name="app_name">NoiseSanj</string>
 
     <!-- MAIN ACTIVITY STRINGS -->
     <string name="LayoutSimpleLine1">SOUND LEVEL</string>

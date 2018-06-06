@@ -348,12 +348,12 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <it.piemonte.arpa.openoise.PlotSLMHistory
+            <ir.alirezafaraji.noisesanj.PlotSLMHistory
                 android:id="@+id/PlotSLMHistory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <it.piemonte.arpa.openoise.PlotThirdOctave
+            <ir.alirezafaraji.noisesanj.PlotThirdOctave
                 android:id="@+id/PlotThirdOctave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -366,7 +366,7 @@
             <!--android:visibility="gone"-->
             <!--/>-->
 
-            <it.piemonte.arpa.openoise.PlotFFT
+            <ir.alirezafaraji.noisesanj.PlotFFT
                 android:id="@+id/PlotFFT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

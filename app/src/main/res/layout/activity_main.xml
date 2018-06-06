@@ -359,13 +359,6 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
 
-            <!--<openoisetSonogram-->
-            <!--android:id="@+id/PlotSonogram"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:visibility="gone"-->
-            <!--/>-->
-
             <ir.alirezafaraji.noisesanj.PlotFFT
                 android:id="@+id/PlotFFT"
                 android:layout_width="wrap_content"

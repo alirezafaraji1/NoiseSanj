@@ -53,7 +53,7 @@
     <!-- LOG FILES LIST ACTIVITY STRINGS -->
     <string name="title_activity_log_files_list">Files list</string>
     <!-- DIALOG FILES LIST -->
-    <string name="dialog_files_list_open_file">Open with OpeNoise</string>
+    <string name="dialog_files_list_open_file">Open with NoiseSanj</string>
     <string name="dialog_files_list_open_with">Open with another app</string>
     <string name="dialog_files_list_share_file">Share</string>
     <string name="dialog_files_list_delete_file">Delete</string>

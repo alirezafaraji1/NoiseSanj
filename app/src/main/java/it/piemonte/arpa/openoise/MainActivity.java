@@ -54,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView LevelNoPlotLabel;
     private TextView LAeqRunning;
     private TextView TimeDisplayLabel;
-    private TextView startingTimeRunning;
-    private TextView durationTimeRunning;
     private Button buttonRunning;
     private Button buttonLog;
     private TextView startingTimeLog;
@@ -230,8 +228,6 @@ public class MainActivity extends AppCompatActivity {
         LevelNoPlot = (TextView) findViewById(R.id.LevelNoPlot);
         LevelNoPlotLabel = (TextView) findViewById(R.id.LevelNoPlotLabel);
         LAeqRunning = (TextView) findViewById(R.id.LAeqRunning);
-        startingTimeRunning = (TextView) findViewById(R.id.StartingTimeRunning);
-        durationTimeRunning = (TextView) findViewById(R.id.DurationTimeRunning);
         TimeDisplayLabel = (TextView) findViewById(R.id.time_display_label);
         buttonRunning = (Button) findViewById(R.id.ButtonRunning);
         buttonLog = (Button) findViewById(R.id.ButtonLog);
@@ -313,9 +309,6 @@ public class MainActivity extends AppCompatActivity {
 //                    dbHistorySonogram[i][j] = 0f;
 //                }
 
-                DateFormat df = new SimpleDateFormat("EEE yyyy/MM/dd HH:mm:ss");
-                startingTimeRunning.setText(start + " " + String.format(df.format(new Date())));
-                durationTimeRunning.setText(duration + " 0 " + days + " 00:00:00");
             }
         });
 
@@ -784,7 +777,6 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 LMax.setText(dBformat(dbFftAGlobalMax));
                                 LAeqRunning.setText(dBformat(dbFftAGlobalRunning));
-                                durationTimeRunning.setText(duration + " " + String.format("%d " + days + " %02d:%02d:%02d", TimeRunning / (3600 * 24), (TimeRunning % (3600 * 24) / 3600), (TimeRunning % 3600) / 60, (TimeRunning % 60)));
                                 LMin.setText(dBformat(dbFftAGlobalMin));
                                 if (levelToShow == "dbFftAGlobalMin") {
                                     level.setText(dBformat(dbFftAGlobalMin));
@@ -1130,10 +1122,6 @@ public class MainActivity extends AppCompatActivity {
         start = getApplicationContext().getResources().getString(R.string.Start);
         duration = getApplicationContext().getResources().getString(R.string.Duration);
         durationLogFile = getApplicationContext().getResources().getString(R.string.DurationLogFile);
-
-        DateFormat df = new SimpleDateFormat("EEE yyyy/MM/dd HH:mm:ss");
-        startingTimeRunning.setText(start + " " + String.format(df.format(new Date())));
-        durationTimeRunning.setText(duration + " 0 " + days + " 00:00:00");
 
         startingTimeLogText = getApplicationContext().getResources().getString(R.string.StartingTimeLogText);
         durationTimeLogText = getApplicationContext().getResources().getString(R.string.DurationTimeLogText);

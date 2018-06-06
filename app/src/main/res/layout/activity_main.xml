@@ -11,48 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    INFO TIME PART   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:orientation="vertical"
-
-                >
-
-                <TextView
-                    android:id="@+id/StartingTimeRunning"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/StartingTimeRunning"
-                    android:textSize="@dimen/text_small"
-
-                    />
-
-                <TextView
-                    android:id="@+id/DurationTimeRunning"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/DurationTimeRunning"
-                    android:textSize="@dimen/text_small"
-
-                    />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
         <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    LMIN, LEQ, LMAX PART   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   -->
         <LinearLayout
             android:id="@+id/LayoutAllLevel"

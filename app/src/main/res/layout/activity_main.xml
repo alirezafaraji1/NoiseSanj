@@ -1,18 +1,15 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/LayoutAdvance"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    INFO TIME PART   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   -->
         <LinearLayout
@@ -52,16 +49,6 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/ButtonRunning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="0dp"
-                android:gravity="center"
-                android:text="@string/ButtonRunning"
-                android:textAllCaps="false"
-                android:textSize="@dimen/text_small" />
 
         </LinearLayout>
 
@@ -315,6 +302,17 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/ButtonRunning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:gravity="center"
+                android:text="@string/ButtonRunning"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_small" />
+
+            <Button
                 android:id="@+id/ButtonLog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -329,6 +327,60 @@
         <!--</LinearLayout>-->
 
         <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    PLOT PART   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   -->
+
+
+        <LinearLayout
+            android:id="@+id/LayoutPlot1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/ShowLocLat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/StartingTimeRunning"
+                    android:textSize="@dimen/text_small" />
+
+                <TextView
+                    android:id="@+id/ShowLocLong"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/StartingTimeRunning"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/LocReq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:layout_weight="0.05"
+                android:gravity="center"
+                android:text="Location"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+
+
         <LinearLayout
             android:id="@+id/LayoutPlot"
             android:layout_width="match_parent"

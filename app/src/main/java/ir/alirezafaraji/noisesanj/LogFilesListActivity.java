@@ -1,4 +1,4 @@
-package it.piemonte.arpa.openoise;
+package ir.alirezafaraji.noisesanj;
 
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
